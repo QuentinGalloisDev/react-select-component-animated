@@ -10,7 +10,7 @@
   "author": "Quentin Gallois",
   "repository": {
     "type": "git",
-    "url": "https://github.com/utilisateur/nom-du-repo.git"
+    "url": "https://github.com/QuentinGalloisDev/react-select-component-animated"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
