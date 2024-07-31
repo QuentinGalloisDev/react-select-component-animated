@@ -1,0 +1,78 @@
+.animated-select-container {
+    width: 200px;
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+.animated-select-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    transition: transform 0.5s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+.options-container,
+.search-bar {
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 0;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: none;
+    /* No transition initially */
+}
+
+.options-container.open,
+.search-bar.open {
+    max-height: 200px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.options-container.closed,
+.search-bar.closed {
+    opacity: 0;
+    max-height: 0;
+}
+
+.options-dropdown.initialized .options-container.open,
+.options-dropdown.initialized .search-bar.open {
+    transition: max-height var(--fade-in-duration) ease, opacity var(--fade-in-duration) ease;
+}
+
+.options-dropdown.initialized .options-container.closed,
+.options-dropdown.initialized .search-bar.closed {
+    transition: max-height var(--fade-out-duration) ease, opacity var(--fade-out-duration) ease;
+}
+
+.option {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.hidden-select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+}
